@@ -1,0 +1,39 @@
+<mat-card>
+    <mat-card-header>
+        <mat-card-title><h1>Add New User</h1></mat-card-title>
+        <mat-card-subtitle>Fill All Fields</mat-card-subtitle>
+      </mat-card-header>
+<mat-card-content>
+  <div class="example-container">
+
+    <mat-form-field>
+      <input  name="name" matInput placeholder="Name" #uname>
+    </mat-form-field>
+  
+    <mat-form-field>
+        <input  name="account" matInput placeholder="Account" #uaccount>
+      </mat-form-field>
+  
+    <mat-form-field>
+      <mat-select placeholder="Bank" #ubank>
+        <mat-option value="UBL">UBL</mat-option>
+        <mat-option value="DBL">DBL</mat-option>
+        <mat-option value="JBL">JBL</mat-option>
+        <mat-option value="TBL">TBL</mat-option>
+        <mat-option value="RBL">RBL</mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <mat-form-field>
+        <mat-select placeholder="Branch" #ubranch>
+          <mat-option value="Dhaka">Dhaka</mat-option>
+          <mat-option value="Dhaka">Chittagong</mat-option>
+          <mat-option value="Dhaka">Sylhet</mat-option>
+          <mat-option value="Dhaka">Rajshahi</mat-option>
+        </mat-select>
+      </mat-form-field>
+    <button mat-button (click)="submit(uname.value,uaccount.value,ubank.value,ubranch.value)">Submit</button>
+
+  </div>
+</mat-card-content>
+</mat-card>

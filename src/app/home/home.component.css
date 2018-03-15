@@ -1,0 +1,27 @@
+.example-card {
+    max-width: 200px;
+    text-align: center;
+    background: linear-gradient(#74ebd5,#ACB6E5);
+    float: left;
+    margin:20px;
+    
+  }
+  .example-margin {
+    margin: 0 auto;
+  }
+
+  .firstrow{
+      padding: 20px;
+      display: flex;
+    justify-content: center;
+  }
+  
+  table{
+      float: left;
+  }
+
+  .chart{
+    max-width: 950px;
+    margin: 0 auto;
+    
+  }

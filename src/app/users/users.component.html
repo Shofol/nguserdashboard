@@ -1,0 +1,52 @@
+<mat-card><h1>User Lists</h1></mat-card>
+
+<div class="example-container mat-elevation-z8">
+    <div class="example-header">
+      <mat-form-field>
+        <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Search">
+      </mat-form-field>
+    </div>
+  
+    <mat-table #table [dataSource]="dataSource">
+  
+      <!-- Position Column -->
+      <ng-container matColumnDef="position">
+        <mat-header-cell *matHeaderCellDef> No. </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.position}} </mat-cell>
+      </ng-container>
+  
+      <!-- Name Column -->
+      <ng-container matColumnDef="name">
+        <mat-header-cell *matHeaderCellDef> Name </mat-header-cell>
+        <mat-cell class="namecell" *matCellDef="let element"> <a routerLink="/userprofile/{{element.position}}"> {{element.name}} </a></mat-cell>
+      </ng-container>
+  
+      <!-- Account Column -->
+      <ng-container matColumnDef="account">
+        <mat-header-cell *matHeaderCellDef> Account No </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.account}} </mat-cell>
+      </ng-container>
+  
+      <!-- Bank Column -->
+      <ng-container matColumnDef="bank">
+        <mat-header-cell *matHeaderCellDef> Bank </mat-header-cell>
+        <mat-cell *matCellDef="let element"> {{element.bank}} </mat-cell>
+      </ng-container>
+
+      <!-- Branch Column -->
+      <ng-container matColumnDef="branch">
+          <mat-header-cell *matHeaderCellDef> Branch </mat-header-cell>
+          <mat-cell *matCellDef="let element"> {{element.branch}} </mat-cell>
+        </ng-container>
+  
+        <ng-container matColumnDef="delete">
+            <mat-header-cell *matHeaderCellDef> Delete </mat-header-cell>
+            <mat-cell *matCellDef="let element"> <button mat-button (click)="remove(element)" >X</button> </mat-cell>
+          </ng-container>  
+
+      <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+      <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+    </mat-table>
+  </div>
+  
+  

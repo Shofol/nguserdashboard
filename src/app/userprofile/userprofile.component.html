@@ -1,0 +1,54 @@
+<mat-card class="cover">
+  <mat-card-header>
+      <mat-card class="example-card">
+          <mat-card-header>
+          </mat-card-header>
+          <mat-card-content>
+            <img src="https://png.pngtree.com/element_origin_min_pic/17/09/18/07d35e1b5ff71c52f75c6ed3b211dae5.jpg" width="100px" height="100px" alt="">
+          </mat-card-content>
+          <mat-card-actions>
+            <button mat-raised-button>Change Photo</button>
+          </mat-card-actions>
+        </mat-card>
+  </mat-card-header>
+</mat-card>
+<mat-card class="edituser">
+    <mat-card-header>
+        <mat-card-title><h1>User Detail</h1></mat-card-title>
+        <mat-card-subtitle>You can edit here</mat-card-subtitle>
+      </mat-card-header>
+<mat-card-content>
+  <div class="example-container">
+
+    <mat-form-field>
+      <input id="name" placeholder="Name" name="name" matInput  #uname>
+    </mat-form-field>
+  
+    <mat-form-field>
+        <input name="account" matInput placeholder="Account" #uaccount>
+      </mat-form-field>
+    <p>Bank:<span name="bankname"></span></p>
+    <mat-form-field>
+      
+      <mat-select name="bank" placeholder="Change Bank" #ubank>
+        <mat-option value="UBL">UBL</mat-option>
+        <mat-option value="DBL">DBL</mat-option>
+        <mat-option value="JBL">JBL</mat-option>
+        <mat-option value="TBL">TBL</mat-option>
+        <mat-option value="RBL">RBL</mat-option>
+      </mat-select>
+    </mat-form-field>
+    <p>Branch:<span name="branchname"></span></p>
+    <mat-form-field>
+        <mat-select name="branch" placeholder="Change Branch" #ubranch>
+          <mat-option value="Dhaka">Dhaka</mat-option>
+          <mat-option value="Chittagong">Chittagong</mat-option>
+          <mat-option value="Sylhet">Sylhet</mat-option>
+          <mat-option value="Rajshahi">Rajshahi</mat-option>
+        </mat-select>
+      </mat-form-field>
+    <button mat-button (click)="change(uname.value,uaccount.value,ubank.value,ubranch.value)">Change</button>
+
+  </div>
+</mat-card-content>
+</mat-card>
